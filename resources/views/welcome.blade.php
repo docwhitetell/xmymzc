@@ -24,23 +24,29 @@
     <link href="{{asset('lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('lib/animate/animate.min.css')}}" rel="stylesheet">
     <link href="{{asset('lib/modal-video/css/modal-video.min.css')}}" rel="stylesheet">
-
+    <link rel="stylesheet" href="{{asset('vendor/fullpage/fullpage.min.css')}}">
     <!-- Main Stylesheet File -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">
+    <script src="{{asset('vendor/fullpage/vendors/easings.min.js')}}"></script>
 
-    <!-- =======================================================
-      Theme Name: eStartup
-      Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
-      Author: BootstrapMade.com
-      License: https://bootstrapmade.com/license/
-    ======================================================= -->
+
+    <!-- This following line is only necessary in the case of using the option `scrollOverflow:true` -->
+    <script type="text/javascript" src="{{asset('vendor/fullpage/vendors/scrolloverflow.min.js')}}"></script>
+    <script src="{{asset('vendor/fullpage/fullpage.min.js')}}"></script>
+
+    <style>
+        #fp-nav ul li a span{
+            background: #fff !important;
+        }
+    </style>
 </head>
 
-<body id="#body">
+<body id="#body" style="color: #fff">
 
 @include('layouts.header')
 
-<!--==========================
+<div id="fullpage" style="margin-top: -40px">
+    <!--==========================
   Banner Section
 ============================-->
 @include('components.banner')
@@ -51,19 +57,18 @@
 @include('components.about-us')
 
 <!--==========================
-  Features Section
-============================-->
-@include('components.services')
-
-<!--==========================
   Screenshots Section
 ============================-->
 @include('components.example')
 
 <!--==========================
+  Screenshots Section
+============================-->
+@include('components.solutions')
+<!--==========================
   Video Section
 ============================-->
-@include('components.video')
+{{--@include('components.video')--}}
 
 {{--@include('team')--}}
 
@@ -87,7 +92,10 @@
 <!--==========================
   Footer
 ============================-->
-@include('layouts.footer')
+    @include('layouts.footer')
+</div>
+
+
 
 
 <!-- JavaScript Libraries -->
@@ -105,6 +113,124 @@
 
 <!-- Template Main Javascript File -->
 <script src="{{asset('js/main.js')}}"></script>
+
+<script>
+    function AnimationIn() {
+        var animationIn = this.getAttribute('data-animation-in');
+        var animationOut = this.getAttribute('data-animation-out');
+        var delay = this.getAttribute('data-delay');
+        this.classList.add('animated');
+        this.classList.add(animationIn);
+        this.classList.remove(animationOut);
+        this.style.visibility = 'visible';
+    }
+    function AnimationLeave() {
+        var animationIn = this.getAttribute('data-animation-in');
+        var animationOut = this.getAttribute('data-animation-out');
+        this.classList.remove(animationIn);
+        this.classList.add('animated');
+        this.classList.add(animationOut);
+    }
+
+    $(function () {
+        $animationEl = $('.animation');
+        $animationEl.bind('onLoad',AnimationIn);
+        $animationEl.bind('onLeave', AnimationLeave);
+        var app = new fullpage('#fullpage', {
+            //Navigation
+            lockAnchors: false,
+            anchors:['Home', 'AboutUs', 'Example', 'Solution', 'Contact', 'Join-Us', 'JoinAgent', 'Members', 'Templates', 'Links'],
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['首页', '关于我们', '客户案例', '企业网络解决方案', '联系我们', '加入我们', '会员中心', '模板中心', '友情链接'],
+            showActiveTooltip: false,
+            slidesNavigation: false,
+            slidesNavPosition: 'bottom',
+
+            //Scrolling
+            css3: true,
+            scrollingSpeed: 1000,
+            autoScrolling: true,
+            fitToSection: true,
+            fitToSectionDelay: 500,
+            scrollBar: false,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: false,
+            continuousHorizontal: false,
+            scrollHorizontally: false,
+            interlockedSlides: false,
+            dragAndMove: false,
+            offsetSections: false,
+            resetSliders: false,
+            fadingEffect: false,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: false,
+            scrollOverflowReset: false,
+            scrollOverflowOptions: null,
+            touchSensitivity: 15,
+            normalScrollElementTouchThreshold: 5,
+            bigSectionsDestination: null,
+
+            //Accessibility
+            keyboardScrolling: true,
+            animateAnchor: true,
+            recordHistory: true,
+
+            //Design
+            controlArrows: true,
+            verticalCentered: true,
+            sectionsColor : [],
+            paddingTop: '0em',
+            paddingBottom: '10px',
+            fixedElements: '#header',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            responsiveSlides: false,
+            parallax: false,
+            parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+            //Custom selectors
+            sectionSelector: '.page',
+            slideSelector: '.slide',
+
+            lazyLoading: true,
+
+            //events
+            onLeave: function(origin, destination, direction){
+                $(origin.item).find('.animation').trigger('onLeave');
+            },
+            afterLoad: function(origin, destination, direction){
+                $(destination.item).find('.animation').trigger('onLoad');
+            },
+            afterRender: function(){},
+            afterResize: function(width, height){},
+            afterResponsive: function(isResponsive){},
+            afterSlideLoad: function(section, origin, destination, direction){},
+            onSlideLeave: function(section, origin, destination, direction){}
+        });
+
+        //var navLinkItem = document.getElementsByClassName('nav-link-item');
+        var navLinkItem = $('.nav-link-item');
+        var mobileLinkItem = $('#mobile-nav').find('.nav-link-item');
+
+        navLinkItem.bind('click', function () {
+            var targetIndex = this.getAttribute('data-index') || 1;
+            app.moveTo(targetIndex);
+        });
+        mobileLinkItem.bind('click',function () {
+            var targetIndex = this.getAttribute('data-index') || 1;
+            app.moveTo(targetIndex);
+        });
+
+    })
+
+
+
+</script>
 
 </body>
 </html>

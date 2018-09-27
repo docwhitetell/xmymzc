@@ -136,11 +136,19 @@ span {
   color: #fff;
 }
 
+.animation{
+  visibility: hidden;
+}
+#hero, #about-us, #solutions, #screenshots, #contactus, #joinus, #join-agent{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+/*  background: #fff;*/
   position: fixed;
   left: 0;
   top: 0;
@@ -192,8 +200,6 @@ span {
 #hero {
   width: 100%;
   height: calc(100vh - 40px);
-  background: url(../img/hero-bg.png) center bottom no-repeat;
-  background-size: 100%;
   position: relative;
   margin-top: 40px;
 }
@@ -222,18 +228,18 @@ span {
 #hero h1 {
   margin: 0 0 10px 0;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 56px;
   font-family: "Philosopher", sans-serif;
-  color: #71c55d;
+  color: inherit;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
-}
+}*/
 
 #hero h2 {
   color: #777;
@@ -375,7 +381,7 @@ span {
   padding: 8px 8px;
   text-decoration: none;
   display: inline-block;
-  color: #555;
+  color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -396,7 +402,7 @@ span {
   margin: 0;
   padding: 10px;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
-  background: #fff;
+  background: #2196f3
 }
 
 .nav-menu ul li {
@@ -405,7 +411,7 @@ span {
 
 .nav-menu ul li a {
   padding: 5px 10px;
-  color: #333;
+  color: #fff;
   transition: 0.3s;
   display: block;
   font-size: 14px;
@@ -437,7 +443,7 @@ span {
 }
 
 #mobile-nav-toggle i {
-  color: #555;
+  color: #fff;
   font-size: 24px;
 }
 
@@ -551,28 +557,32 @@ body.mobile-nav-active #mobile-nav-toggle i {
 .section-title {
   margin-bottom: 80px;
 }
-
-@media (max-width: 992px) {
-  .section-title {
-    margin-bottom: 40px;
-  }
-}
-
 .section-title h2 {
+  color: inherit;
   font-family: "Roboto", sans-serif;
   font-size: 45px;
-  font-weight: 100;
+  font-weight: 400;
   letter-spacing: 2px;
   margin-bottom: 20px;
   text-transform: capitalize;
 }
+@media (max-width: 992px) {
+  .section-title {
+    margin-bottom: 40px;
+  }
+  .section-title h2{
+    font-size: 38px;
+  }
+}
+
+
 
 .section-title .separator {
   margin: 0;
 }
 
 .separator {
-  color: #626262;
+  color: inherit;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -633,7 +643,7 @@ body.mobile-nav-active #mobile-nav-toggle i {
 }
 
 #about-us .about-content {
-  padding-top: 60px;
+  /*padding-top: 60px;*/
 }
 
 #about-us .about-content h2 {
@@ -1167,7 +1177,10 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #joinus .row{
   margin-bottom: 40px;
 }
-#joinus .btn {
+#joinus li{
+  color: inherit;
+}
+#join-agent .btn {
   background: #71c55d;
   border: 0;
   border-radius: 0;
@@ -1227,6 +1240,9 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #contactus .contact-detail {
   list-style: none;
   text-align: center;
+}
+#contactus li{
+  color: inherit;
 }
 #contact {
   background: #fff;
@@ -1331,8 +1347,28 @@ body.mobile-nav-active #mobile-nav-toggle i {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+/*@media (max-width: 768px) {
+  #footers{
+    text-align: center;
+  }
+  .footer .footer-logo img{
+    margin: 0 auto;
+  }
+  .footer .list-menu li{
+    display: inline-block;
+  }
+}*/
+#footers{
+  text-align: center;
+}
+.footer .footer-logo img{
+  margin: 0 auto;
+}
+.footer .list-menu li{
+  display: inline-block;
+}
 .footer {
-  background: #2a2c30;
+  background: #2278d1;
   padding-top: 50px;
 }
 
@@ -1377,6 +1413,9 @@ body.mobile-nav-active #mobile-nav-toggle i {
   margin-top: 50px;
   text-align: center;
   padding: 25px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer .copyrights p, .footer .copyrights .credits {

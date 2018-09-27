@@ -1,4 +1,4 @@
-<section id="blog" class="padd-section wow fadeInUp">
+<section id="blog" class="padd-section wow fadeInUp page">
 
     <div class="container">
         <div class="section-title text-center">

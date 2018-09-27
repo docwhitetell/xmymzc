@@ -12,6 +12,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index');
 
+    $router->resource('/example-solution', ExampleController::class);
+    $router->resource('/site-manager/page', PageController::class);
     $router->resource('/site-manager/contact', ContactController::class);
     $router->resource('/site-manager/friends-link', LinkController::class);
 });

@@ -1,4 +1,4 @@
-<section id="video" class="text-center wow fadeInUp">
+<section id="video" class="text-center wow fadeInUp page">
     <div class="overlay">
         <div class="container-fluid container-full">
 
