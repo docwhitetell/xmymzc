@@ -19,9 +19,9 @@
                         <li><a href="javascript:void(0)" class="nav-link-item" data-index="7">加入代理</a></li>
                     </ul>
                 </li>
-                <li><a href="javascript:void(0)" class="nav-link-item" data-index="8">会员中心</a></li>
-                <li><a href="javascript:void(0)" class="nav-link-item" data-index="9">模板中心</a></li>
-                <li><a href="javascript:void(0)" class="nav-link-item" data-index="10">友情链接</a></li>
+        {{--        <li><a href="javascript:void(0)" class="nav-link-item" data-index="8">会员中心</a></li>
+                <li><a href="javascript:void(0)" class="nav-link-item" data-index="9">模板中心</a></li>--}}
+                <li><a href="javascript:void(0)" class="nav-link-item" data-index="8">友情链接</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>

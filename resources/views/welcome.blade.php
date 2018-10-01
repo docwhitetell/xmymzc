@@ -142,7 +142,7 @@
             anchors:['Home', 'AboutUs', 'Example', 'Solution', 'Contact', 'Join-Us', 'JoinAgent', 'Members', 'Templates', 'Links'],
             navigation: true,
             navigationPosition: 'right',
-            navigationTooltips: ['首页', '关于我们', '客户案例', '企业网络解决方案', '联系我们', '加入我们', '会员中心', '模板中心', '友情链接'],
+            navigationTooltips: ['首页', '关于我们', '客户案例', '企业网络解决方案', '联系我们', '加入我们','加入代理', '友情链接'],
             showActiveTooltip: false,
             slidesNavigation: false,
             slidesNavPosition: 'bottom',

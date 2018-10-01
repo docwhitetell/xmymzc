@@ -80,9 +80,9 @@ class ExampleController extends Controller
                 return "<img style='max-width: 100px' src='$poster'/>";
             });
             $grid->link('链接');
-            $grid->downloads('下载次数');
-            $grid->created_at('发布于');
-            $grid->updated_at('上次修改');
+            //$grid->downloads('下载次数');
+      /*      $grid->created_at('发布于');
+            $grid->updated_at('上次修改');*/
         });
     }
 
@@ -94,11 +94,11 @@ class ExampleController extends Controller
     protected function form()
     {
         return Admin::form(Example::class, function (Form $form) {
-
-            $form->display('id', 'ID');
-
-            $form->display('created_at', 'Created At');
-            $form->display('updated_at', 'Updated At');
+            $form->select('type','类型')->options(['example'=>'客户案例','solutions'=>'解决方案']);
+            $form->text('title','案例名');
+            $form->text('description','简述');
+            $form->text('poster','海报图');
+            $form->text('link','链接');
         });
     }
 }

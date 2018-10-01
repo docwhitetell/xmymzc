@@ -1,10 +1,17 @@
 
 <section id="footers" class="page footer">
     <div class="container">
-        <div class="row animation" data-animation-in="fadeInUp" data-animation-out="fadeOutUp">
+        <div class="row animation {{$footer->title_animation_delay ? "delay-".$footer->title_animation_delay : ""}} {{$footer->title_animation_duration ? $footer->title_animation_duration : ""}}"
+             data-animation-in="{{$footer->title_animation_in}}"
+             data-animation-out="{{$footer->title_animation_out}}"
+             style="font-size: {{$footer->title_font_size .'px'}}; color: {{$footer->title_font_color}};"
+        >
             <div class="col-sm-12 col-md-12">
                 <div class="footer-logo">
-                    <a class="navbar-brand" href="#">微信关注</a>
+                    <a class="navbar-brand"
+                       href="#"
+                       style="font-size: {{$footer->title_font_size .'px'}}; color: {{$footer->title_font_color}};margin-right: 0"
+                    >微信关注</a>
                     <img src="{{config('QRCode')}}" alt="">
                 </div>
             </div>
