@@ -23,13 +23,13 @@
              data-animation-in="{{$join_us->content_animation_in}}"
              data-animation-out="{{$join_us->content_animation_out}}"
         >
-            <div class="col-lg-3 col-md-4">
+            <div class="col-lg-12">
             </div>
 
-            <div class="col-lg-5 col-md-8">
-                <ul class="list-unstyled" style="margin: 0 20px;font-size: {{$join_us->content_font_size .'px'}}; color: {{$join_us->content_font_color}};">
-                    <li style="font-size: inherit;color: inherit">1.年度评优、绩效奖金、长期激励、人才推荐奖、专利基金等</li>
-                    <li style="font-size: inherit;color: inherit">2.按国家规定为每个员工缴纳五险一金</li>
+            <div class="col-lg-12">
+                <ul class="list-unstyled" style="text-align: center;margin: 0 20px;font-size: {{$join_us->content_font_size .'px'}}; color: {{$join_us->content_font_color}};">
+                    <li style="font-size: inherit;color: inherit">1.按国家规定为每个员工缴纳五险一金</li>
+                    <li style="font-size: inherit;color: inherit">2.年度评优、绩效奖金、长期激励、人才推荐奖、专利基金等</li>
                     <li style="font-size: inherit;color: inherit">3.温馨假别 带薪年假、带薪病假，享受国家规定各种带薪假种</li>
                     <li style="font-size: inherit;color: inherit">4.弹性工作制，每周5天7个小时，按照国家规定实行假期制度，加班另有加班补贴</li>
                     <li style="font-size: inherit;color: inherit">5.员工活动 篮球、羽毛球、瑜伽、电影， 公司赠送生日蛋糕，生日礼物，小伙伴一起为你开个快乐的生日趴</li>
