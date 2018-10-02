@@ -13,15 +13,16 @@
                 <li><a href="javascript:void(0)" class="nav-link-item" data-index="3">客户案例</a></li>
                 <li><a href="javascript:void(0)" class="nav-link-item" data-index="4">企业网络解决方案</a></li>
                 <li><a href="javascript:void(0)" class="nav-link-item" data-index="5">联系我们</a></li>
-                <li class="menu-has-children"><a href="javascript:void(0)">加入我们</a>
+                <li><a href="javascript:void(0)" class="nav-link-item" data-index="6">加入我们</a></li>
+          {{--      <li class="menu-has-children"><a href="javascript:void(0)">加入我们</a>
                     <ul>
                         <li><a href="javascript:void(0)" class="nav-link-item" data-index="6">加入我们</a></li>
                         <li><a href="javascript:void(0)" class="nav-link-item" data-index="7">加入代理</a></li>
                     </ul>
-                </li>
+                </li>--}}
         {{--        <li><a href="javascript:void(0)" class="nav-link-item" data-index="8">会员中心</a></li>
                 <li><a href="javascript:void(0)" class="nav-link-item" data-index="9">模板中心</a></li>--}}
-                <li><a href="javascript:void(0)" class="nav-link-item" data-index="8">友情链接</a></li>
+                <li><a href="javascript:void(0)" class="nav-link-item" data-index="7">友情链接</a></li>
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>

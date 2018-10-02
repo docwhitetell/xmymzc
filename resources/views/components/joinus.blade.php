@@ -40,6 +40,7 @@
     </div>
 </section><!-- #contact -->
 
+{{--
 <section id="join-agent"
          class="padd-section page"
          style="{{$join_us->background_type !== 'image' ? "background:".$join_us->background : "background-image: url('".$join_us->background."')"}}"
@@ -87,4 +88,4 @@
             </div>
         </div>
     </div>
-</section><!-- #contact -->
+</section><!-- #contact -->--}}
